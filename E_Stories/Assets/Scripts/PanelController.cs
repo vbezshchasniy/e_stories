@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PanelController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PanelController : MonoBehaviour
     public Image Image;
     public Text Text;
     public Button ButtonClose;
+    public float FadeDuration = 0.15f;
 
     private void Start()
     {
@@ -28,8 +30,19 @@ public class PanelController : MonoBehaviour
         Color newTextColor = new Color(Text.color.r, Text.color.g, Text.color.b, colorA);
 
         Rect.localScale = state ? Vector3.one : Vector3.zero;
+        ButtonClose.gameObject.SetActive(state);
         Image.color = newImageColor;
         Text.color = newTextColor;
-        ButtonClose.gameObject.SetActive(state);
     }
+
+    //IEnumerator UpdateColor(Color element, Color oldColor, Color newColor)
+    //{
+    //    yield return new WaitForEndOfFrame();
+    //    float t = 0;
+    //    while (t < 1)
+    //    {
+    //        element = Color.Lerp(newColor, oldColor, t);
+    //        t += Time.deltaTime / FadeDuration;
+    //    }
+    //}
 }
