@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CategoryGenerator : Generator
 {
-	public CategoryItems Items;
+    public CategoryItems Items;
 	public GameObject MainObject;
 	public int ObjectsCount;
    
