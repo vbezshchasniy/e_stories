@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CategoryGenerator : Generator
 {
-    public CategoryItems Items;
+    public DataCategory Categorys;
 	public GameObject MainObject;
 	public int ObjectsCount;
    
@@ -17,8 +17,7 @@ public class CategoryGenerator : Generator
 		for (int i = 0; i < count; i++)
 		{
 			GameObject temp = Instantiate(obj, transform);
-			temp.GetComponentInChildren<Text>().text = Items.Names[i];
+			temp.GetComponentInChildren<Text>().text = Categorys.Names[i];
 		}
-   
 	}
 }

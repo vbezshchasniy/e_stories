@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554013678406030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5000859b43f97484d891e61c3f50d22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 224566906607574196}
@@ -114,6 +114,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  RouteToParent: 0
 --- !u!114 &114196241818138160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,8 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37b3b6b9106958478fdc519bfac2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
-  Buttons: {fileID: 11400000, guid: 048deffe1ca958b439dc54726cff3872, type: 2}
+  ButtonElements: {fileID: 11400000, guid: 048deffe1ca958b439dc54726cff3872, type: 2}
   MainObject: {fileID: 1015990123345176, guid: cef70cf37d5f8f9478c52a5dc5c78745, type: 2}
   ObjectsCount: 5
 --- !u!114 &114986008749093980

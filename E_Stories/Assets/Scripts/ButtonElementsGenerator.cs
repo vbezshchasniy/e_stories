@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemGenerator : Generator
+public class ButtonElementsGenerator : Generator
 {
-    public CategoryButtons Buttons;
+    public DataButtonElements ButtonElements;
     public GameObject MainObject;
     public int ObjectsCount;
 
@@ -12,9 +12,7 @@ public class ItemGenerator : Generator
     private void Start()
     {
         Generate(MainObject, ObjectsCount);
-
-        GameObject PanelGO = GameObject.FindWithTag(Constants.ReadPanel);
-        Panel = PanelGO.GetComponent<PanelController>();
+        Panel = FindObjectOfType<PanelController>();
     }
 
     public override void Generate(GameObject obj, int count)
@@ -29,14 +27,15 @@ public class ItemGenerator : Generator
 
     private void OnButtonClickHandler()
     {
-        Panel.SetState(true);
+        Panel.GameObj.SetActive(true);
+        //Panel.SetState(true);
         //TODO
-        // Use Server to donwload text;
+        // Use Server to download text;
     }
 
     private Sprite GetRandomPicture()
     {
-        int i = UnityEngine.Random.Range(0, Buttons.Pictures.Count);
-        return Buttons.Pictures[i];
+        int i = UnityEngine.Random.Range(0, ButtonElements.Pictures.Count);
+        return ButtonElements.Pictures[i];
     }
 }

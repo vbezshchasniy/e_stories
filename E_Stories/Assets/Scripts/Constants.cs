@@ -3,5 +3,5 @@
     /// <summary>
     /// TAGS
     /// </summary>
-    public static string ReadPanel = "ReadPanel";
+    public static string ReadPanel = "PanelController";
 }
