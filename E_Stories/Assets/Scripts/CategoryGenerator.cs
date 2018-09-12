@@ -3,13 +3,12 @@ using UnityEngine.UI;
 
 public class CategoryGenerator : Generator
 {
-    public DataCategory Categorys;
+    public DataCategory DataCategory;
 	public GameObject MainObject;
-	public int ObjectsCount;
    
 	private void Start()
 	{
-		Generate(MainObject, ObjectsCount);
+		Generate(MainObject, DataCategory.Categories.Length);
 	}
    
 	public override void Generate(GameObject obj, int count)
@@ -17,7 +16,8 @@ public class CategoryGenerator : Generator
 		for (int i = 0; i < count; i++)
 		{
 			GameObject temp = Instantiate(obj, transform);
-			temp.GetComponentInChildren<Text>().text = Categorys.Names[i];
+			temp.GetComponentInChildren<Text>().text = DataCategory.Categories[i].Name;
+			temp.GetComponentInChildren<ButtonElementsGenerator>().ButtonElements = DataCategory.Categories[i].Type;
 		}
 	}
 }

@@ -1,18 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonElementsGenerator : Generator
 {
-    public DataButtonElements ButtonElements;
     public GameObject MainObject;
-    public int ObjectsCount;
-
-    private PanelController Panel;
+    public CategoryType ButtonElements;
+    private PanelsController PanelController;
+    private List<ButtonItem> ButtonItems;
 
     private void Start()
     {
-        Generate(MainObject, ObjectsCount);
-        Panel = FindObjectOfType<PanelController>();
+        ButtonItems = new List<ButtonItem>(ButtonElements.CategoryItems.Length);
+        Generate(MainObject, ButtonElements.CategoryItems.Length);
+        PanelController = FindObjectOfType<PanelsController>();
     }
 
     public override void Generate(GameObject obj, int count)
@@ -20,22 +22,37 @@ public class ButtonElementsGenerator : Generator
         for (int i = 0; i < count; i++)
         {
             GameObject item = Instantiate(obj, transform);
-            item.GetComponent<Image>().sprite = GetRandomPicture();
-            item.GetComponent<Button>().onClick.AddListener(OnButtonClickHandler);
+            int j = i;
+            item.GetComponent<Button>().onClick.AddListener(() => OnButtonClickHandler(j));
+            item.AddComponent<ButtonItem>();
+            ButtonItems.Add(item.GetComponent<ButtonItem>());
+            ButtonItems[i].Id = GetRandomId();
+            item.GetComponent<Image>().sprite = GetRandomPicture(i);
         }
     }
 
-    private void OnButtonClickHandler()
+    private void OnButtonClickHandler(int i)
     {
-        Panel.GameObj.SetActive(true);
-        //Panel.SetState(true);
-        //TODO
-        // Use Server to download text;
+        PanelController.PreviewPanel.SetActive(true);
+        PanelController.SetPreviewPanelItem(ButtonItems[i].Id);
     }
 
-    private Sprite GetRandomPicture()
+    private int GetRandomId()
     {
-        int i = UnityEngine.Random.Range(0, ButtonElements.Pictures.Count);
-        return ButtonElements.Pictures[i];
+        return UnityEngine.Random.Range(1, ButtonElements.CategoryItems.Length + 1);
+    }
+
+    private Sprite GetRandomPicture(int index)
+    {
+        int j = 0;
+        for (int i = 0; i < ButtonElements.CategoryItems.Length; i++)
+        {
+            if (ButtonElements.CategoryItems[i].Id == ButtonItems[index].Id)
+            {
+                j = i;
+                break;
+            }
+        }
+        return ButtonElements.CategoryItems[j].Picture;
     }
 }

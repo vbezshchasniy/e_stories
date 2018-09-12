@@ -1,8 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Object For Category", menuName = "Category Object")]
 public class DataCategory : ScriptableObject
 {
-	public List<string> Names;
+	public Category[] Categories;
+}
+
+[Serializable]
+public class Category
+{
+	public string Name;
+	public CategoryType Type;
 }

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ffbfccb4155d24aab225ba447ec64f, type: 3}
+  m_Name: PreviewPanelItem
+  m_EditorClassIdentifier: 
+  Items:
+  - Name: Dracula
+    Id: 2
+    Picture: {fileID: 21300000, guid: 85b172fe544568b40884cf99087b6a81, type: 3}
+    Text: 'DRACULA DRACULA DRACULA DRACULA DRACULA DRACULA DRACULA DRACULA DRACULA
+      DRACULA DRACULA DRACULA DRACULA  '
+  - Name: HarryPotter
+    Id: 1
+    Picture: {fileID: 21300000, guid: 0c988e2c876bfe843a943b06c7654f86, type: 3}
+    Text: Test! Harry Potter is a series of fantasy novels written by British author
+      J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter,
+      and his friends Hermione Granger and Ron Weasley...
+  - Name: TEst
+    Id: 4
+    Picture: {fileID: 21300000, guid: b68959b1b50013640b431317a2c76004, type: 3}
+    Text: 'HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER HUNGER
+      HUNGER '
+  - Name: TEst
+    Id: 3
+    Picture: {fileID: 21300000, guid: 1ab19663f2469514ebcdc6b736be96e3, type: 3}
+    Text: 'LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD '
+  - Name: TEst
+    Id: 6
+    Picture: {fileID: 21300000, guid: 574c6583d6e6a4b43bf05c3432a23065, type: 3}
+    Text: 'MAZE MAZE MAZE MAZE MAZE MAZE MAZE MAZE MAZE MAZE '
+  - Name: TEst
+    Id: 5
+    Picture: {fileID: 21300000, guid: 7d61c6ff1171bb348be4c78889a47e33, type: 3}
+    Text: 'WRINKLE WRINKLE WRINKLE WRINKLE WRINKLE WRINKLE WRINKLE WRINKLE WRINKLE
+      WRINKLE '

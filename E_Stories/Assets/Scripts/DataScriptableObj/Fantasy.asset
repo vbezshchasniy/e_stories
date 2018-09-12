@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b518597fdc019f545b3dfbb005022f12, type: 3}
+  m_Name: Fantasy
+  m_EditorClassIdentifier: 
+  CategoryItems:
+  - Name: Harry Potter
+    Id: 1
+    Picture: {fileID: 21300000, guid: 5651ba0fbdeba944faa084b2e6f9090a, type: 3}
+  - Name: Dracula
+    Id: 2
+    Picture: {fileID: 21300000, guid: e4ada9c07e832cb44b16d8a18489ec64, type: 3}
+  - Name: Ring
+    Id: 3
+    Picture: {fileID: 21300000, guid: 081708c420de2b74c9b71d7576209d0e, type: 3}
+  - Name: Test1
+    Id: 4
+    Picture: {fileID: 21300000, guid: b4ac05b3c11bd30488c518e35306c0a3, type: 3}
+  - Name: Test2
+    Id: 5
+    Picture: {fileID: 21300000, guid: 47239f69cb4009b47926b048e49b127e, type: 3}
+  - Name: Test2
+    Id: 6
+    Picture: {fileID: 21300000, guid: 19a18eeab77194a409cc5888b4840e92, type: 3}
