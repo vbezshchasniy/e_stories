@@ -8,6 +8,7 @@ public class PanelsController : MonoBehaviour
     public bool IsServer;
     public GameObject PreviewPanel;
     public GameObject StoryPanel;
+    public GameObject TestCharacter;
     public Button ButtonClosePreviewPanel;
     public Button ButtonCloseStory;
     public Button ButtonOpenStory;
@@ -16,6 +17,8 @@ public class PanelsController : MonoBehaviour
     private string ServerURL;
     [SerializeField]
     private string LocalPath;
+    [SerializeField]
+    private bool NeedUseImageLoader;
     private WWW www;
     private Image PreviewImage;
     private Image PreviewPanelBackground;
@@ -24,18 +27,23 @@ public class PanelsController : MonoBehaviour
 
     private void Start()
     {
-        if (IsServer)
+        if (NeedUseImageLoader)
         {
-            SendStringState(ServerURL, "Server URL is empty");
-            StartCoroutine(LoadImageFromServer());
+            if (IsServer)
+            {
+                SendStringState(ServerURL, "Server URL is empty");
+                StartCoroutine(LoadImageFromServer());
+            }
+            else
+            {
+                SendStringState(LocalPath, "Local path is empty");
+                StartCoroutine(LoadImageFromLocalPath());
+            }
         }
-        else
-        {
-            SendStringState(LocalPath, "Local path is empty");
-            StartCoroutine(LoadImageFromLocalPath());
-        }
+
         PreviewPanel.SetActive(false);
         StoryPanel.SetActive(false);
+        TestCharacter.SetActive(false);
         ButtonClosePreviewPanel.onClick.AddListener(OnClosePreviewPanelClickHandler);
         ButtonOpenStory.onClick.AddListener(OnOpenStoryClickHandler);
         ButtonCloseStory.onClick.AddListener(OnCloseStoryClickHandler);
@@ -53,11 +61,16 @@ public class PanelsController : MonoBehaviour
     private void OnOpenStoryClickHandler()
     {
         StoryPanel.SetActive(true);
+        TestCharacter.SetActive(true);
+        DialogueSystem.instance.IsShowDialogue = true;
     }
 
     private void OnCloseStoryClickHandler()
     {
         StoryPanel.SetActive(false);
+        TestCharacter.SetActive(false);
+        DialogueSystem.instance.IsShowDialogue = false;
+
     }
     
     private void SendStringState(string purpose, string sendText)
@@ -101,7 +114,7 @@ public class PanelsController : MonoBehaviour
         Texture2D texture2D = new Texture2D(1, 1);
         www.LoadImageIntoTexture(texture2D);
         Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one / 2);
-        PreviewImage.sprite = sprite;
+        //PreviewImage.sprite = sprite; //Load image to set sprite
     }
     
     private static GameObject GetChildGameObjectByName(GameObject fromGameObject, string withName)

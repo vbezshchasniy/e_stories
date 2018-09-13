@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +26,7 @@ public class ButtonElementsGenerator : Generator
             item.AddComponent<ButtonItem>();
             ButtonItems.Add(item.GetComponent<ButtonItem>());
             ButtonItems[i].Id = GetRandomId();
-            item.GetComponent<Image>().sprite = GetRandomPicture(i);
+            item.GetComponent<Image>().sprite = GetPicture(i);
         }
     }
 
@@ -42,7 +41,7 @@ public class ButtonElementsGenerator : Generator
         return UnityEngine.Random.Range(1, ButtonElements.CategoryItems.Length + 1);
     }
 
-    private Sprite GetRandomPicture(int index)
+    private Sprite GetPicture(int index)
     {
         int j = 0;
         for (int i = 0; i < ButtonElements.CategoryItems.Length; i++)

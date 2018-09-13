@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759e1daf134d74d46b4cac7c2ced561d, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  Nodes:
+  - NpcText: Are you here?
+    PlayerAnswer:
+    - Text: +
+      ToNode: 1
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 4
+      SpeakEnd: 0
+  - NpcText: How are you?
+    PlayerAnswer:
+    - Text: +
+      ToNode: 2
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 3
+      SpeakEnd: 0
+  - NpcText: Cool! Let's start?
+    PlayerAnswer:
+    - Text: +
+      ToNode: 4
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 0
+      SpeakEnd: 0
+  - NpcText: I think you're ready...
+    PlayerAnswer:
+    - Text: +
+      ToNode: 4
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 0
+      SpeakEnd: 0
+  - NpcText: I'm waiting for you
+    PlayerAnswer:
+    - Text: +
+      ToNode: 0
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 0
+      SpeakEnd: 0

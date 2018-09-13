@@ -4,6 +4,13 @@
     <e p="C:\UnityProjects\E_Story\E_Stories" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="MeshSmith" t="Include">
+          <e p="ToonMonsterII" t="Include">
+            <e p="Toon Demon" t="Include">
+              <e p="readMe.txt" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="ButtonElementsGenerator.cs" t="Include" />
           <e p="ButtonItem.cs" t="Include" />
@@ -12,8 +19,11 @@
           <e p="DataScriptableObj" t="Include">
             <e p="CategoryType.cs" t="Include" />
             <e p="DataCategory.cs" t="Include" />
+            <e p="DataDialogues.cs" t="Include" />
             <e p="PreviewPanelItem.cs" t="Include" />
           </e>
+          <e p="Dialogue.cs" t="Include" />
+          <e p="DialogueSystem.cs" t="Include" />
           <e p="Generator.cs" t="Include" />
           <e p="PanelsController.cs" t="Include" />
           <e p="ScrollRectExtension.cs" t="Include" />
@@ -52,6 +62,7 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
+    <e p="C:\Users\Администратор\.Rider2018.2\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Администратор\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Администратор\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_E_Stories.572162589.00" t="ExcludeRecursive" />
   </component>
