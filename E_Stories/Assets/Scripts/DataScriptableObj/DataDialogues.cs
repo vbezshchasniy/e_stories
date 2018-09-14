@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 [CreateAssetMenu(fileName = "New Object For Dialogue", menuName = "Dialogue Object")]
@@ -22,4 +20,6 @@ public class Answer
 	public string Text;
 	public int ToNode;
 	public bool SpeakEnd;
+	public bool IsHaveContent;
+	public string AssetBundleURL;
 }
