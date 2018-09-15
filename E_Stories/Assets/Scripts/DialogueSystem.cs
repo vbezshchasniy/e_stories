@@ -49,17 +49,22 @@ public class DialogueSystem : MonoBehaviour
             }
 
             CurrentNode = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
-            UpdateText();
+            AnimateText();
         }
     }
 
-    private void UpdateText()
+    private void AnimateText()
     {
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(BotText.DOFade(0, .25f));
-        mySequence.AppendCallback(() => BotText.text = SystemDialogue.Nodes[CurrentNode].NpcText);
+        mySequence.AppendCallback(UpdateData);
         mySequence.AppendInterval(.5f);
         mySequence.Append(BotText.DOFade(1, .25f));
+    }
+
+    private void UpdateData()
+    {
+        BotText.text = SystemDialogue.Nodes[CurrentNode].NpcText;
     }
 
     private void Update()
