@@ -13,7 +13,7 @@ public class LoadObjectFromBundle : MonoBehaviour
 		Path += "/Prefabs";
 
 //		Path = "file:///E://workspace/E_story/E_Stories/Assets/Prefabs";
-		StartCoroutine(DownloadObject());
+//		StartCoroutine(DownloadObject());
 	}
 
 	IEnumerator DownloadObject()
@@ -25,11 +25,11 @@ public class LoadObjectFromBundle : MonoBehaviour
 		
 		
 		AssetBundle bundle = www.assetBundle;
-//		Debug.Log(bundle.name);
+		Debug.Log(bundle.name);
 		AssetBundleRequest request = bundle.LoadAssetAsync<GameObject>("Button");
 		Debug.Log(request);
 		yield return request;
-		
+
 		GameObject obj = request.asset as GameObject;
 		Instantiate<GameObject>(obj);
 	}
