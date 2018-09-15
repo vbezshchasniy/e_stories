@@ -8,8 +8,33 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Editor" t="Include">
-          <e p="SaveAssetBundles.cs" t="Include" />
+        <e p="AssetBundleBrowser" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AssetBundleBrowserMain.cs" t="Include" />
+            <e p="AssetBundleBuildTab.cs" t="Include" />
+            <e p="AssetBundleDataSource" t="Include">
+              <e p="ABDataSource.cs" t="Include" />
+              <e p="ABDataSourceProvider.cs" t="Include" />
+              <e p="AssetDatabaseABDataSource.cs" t="Include" />
+            </e>
+            <e p="AssetBundleManageTab.cs" t="Include" />
+            <e p="AssetBundleModel" t="Include">
+              <e p="ABModel.cs" t="Include" />
+              <e p="ABModelAssetInfo.cs" t="Include" />
+              <e p="ABModelBundleInfo.cs" t="Include" />
+            </e>
+            <e p="AssetBundleTree.cs" t="Include" />
+            <e p="AssetListTree.cs" t="Include" />
+            <e p="BundleDetailList.cs" t="Include" />
+            <e p="InspectTab" t="Include">
+              <e p="AssetBundleInspectTab.cs" t="Include" />
+              <e p="AssetBundleRecord.cs" t="Include" />
+              <e p="InspectSingleBundle.cs" t="Include" />
+              <e p="InspectTreeView.cs" t="Include" />
+            </e>
+            <e p="MessageList.cs" t="Include" />
+            <e p="MessageSystem.cs" t="Include" />
+          </e>
         </e>
         <e p="MeshSmith" t="Include">
           <e p="ToonMonsterII" t="Include">
@@ -30,10 +55,27 @@
             <e p="PreviewPanelItem.cs" t="Include" />
           </e>
           <e p="DialogueSystem.cs" t="Include" />
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="readMe.txt" t="Include" />
+          </e>
           <e p="Generator.cs" t="Include" />
-          <e p="LoadObjectFromBundle.cs" t="Include" />
+          <e p="LoadBundle.cs" t="Include" />
           <e p="PanelsController.cs" t="Include" />
           <e p="ScrollRectExtension.cs" t="Include" />
+          <e p="Utils" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReferenceFinderOnScene.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
