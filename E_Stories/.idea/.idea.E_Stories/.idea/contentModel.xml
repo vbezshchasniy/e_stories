@@ -36,10 +36,12 @@
             <e p="MessageSystem.cs" t="Include" />
           </e>
         </e>
-        <e p="MeshSmith" t="Include">
-          <e p="ToonMonsterII" t="Include">
-            <e p="Toon Demon" t="Include">
-              <e p="readMe.txt" t="Include" />
+        <e p="Content" t="Include">
+          <e p="MeshSmith" t="Include">
+            <e p="ToonMonsterII" t="Include">
+              <e p="Toon Demon" t="Include">
+                <e p="readMe.txt" t="Include" />
+              </e>
             </e>
           </e>
         </e>
@@ -48,6 +50,7 @@
           <e p="ButtonItem.cs" t="Include" />
           <e p="CategoryGenerator.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
+          <e p="ContentController.cs" t="Include" />
           <e p="DataScriptableObj" t="Include">
             <e p="CategoryType.cs" t="Include" />
             <e p="DataCategory.cs" t="Include" />

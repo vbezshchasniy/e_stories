@@ -12,23 +12,43 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   Nodes:
-  - NpcText: Are you here?
-    PlayerAnswer:
-    - Text: +
-      ToNode: 1
-      SpeakEnd: 0
-    - Text: '-'
-      ToNode: 4
-      SpeakEnd: 0
-  - NpcText: How are you?
+  - NodeId: Node 0
+    NpcText: Load 3D Model?
+    TypeLoadingContent: 4
+    AssetBundeURL: 
     PlayerAnswer:
     - Text: +
       ToNode: 2
       SpeakEnd: 0
     - Text: '-'
+      ToNode: 1
+      SpeakEnd: 0
+  - NodeId: Node 1
+    NpcText: Okay, this is sound! Go to video?
+    TypeLoadingContent: 3
+    AssetBundeURL: 
+    PlayerAnswer:
+    - Text: +
       ToNode: 3
       SpeakEnd: 0
-  - NpcText: Cool! Let's start?
+    - Text: '-'
+      ToNode: 4
+      SpeakEnd: 0
+  - NodeId: Node 2
+    NpcText: This is 3D model! Go to video?
+    TypeLoadingContent: 0
+    AssetBundeURL: 
+    PlayerAnswer:
+    - Text: +
+      ToNode: 3
+      SpeakEnd: 0
+    - Text: '-'
+      ToNode: 4
+      SpeakEnd: 0
+  - NodeId: Node 3
+    NpcText: This is video! Want image?
+    TypeLoadingContent: 1
+    AssetBundeURL: 
     PlayerAnswer:
     - Text: +
       ToNode: 4
@@ -36,15 +56,10 @@ MonoBehaviour:
     - Text: '-'
       ToNode: 0
       SpeakEnd: 0
-  - NpcText: I think you're ready...
-    PlayerAnswer:
-    - Text: +
-      ToNode: 4
-      SpeakEnd: 0
-    - Text: '-'
-      ToNode: 0
-      SpeakEnd: 0
-  - NpcText: I'm waiting for you
+  - NodeId: Node 4
+    NpcText: This image! Want more?
+    TypeLoadingContent: 2
+    AssetBundeURL: 
     PlayerAnswer:
     - Text: +
       ToNode: 0

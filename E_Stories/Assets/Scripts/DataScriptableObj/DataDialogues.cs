@@ -5,13 +5,18 @@ using System;
 public class DataDialogues : ScriptableObject 
 {
 	public DialogueNode[] Nodes;
+
 }
 
 [Serializable]
 public class DialogueNode
 {
+	public string NodeId;
 	public string NpcText;
+	public ContentType TypeLoadingContent;
+	public string AssetBundeURL;
 	public Answer[] PlayerAnswer;
+	
 }
 
 [Serializable]
@@ -20,6 +25,13 @@ public class Answer
 	public string Text;
 	public int ToNode;
 	public bool SpeakEnd;
-	public bool IsHaveContent;
-	public string AssetBundleURL;
+}
+
+public enum ContentType
+{
+	Model3D,
+	Video,
+	Image,
+	Sound,
+	Empty
 }
