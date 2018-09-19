@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PanelController
   - 3d
+  - audio
+  - video
+  - image
   layers:
   - Default
   - TransparentFX
