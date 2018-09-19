@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\user.N999\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\user.N999\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user.N999\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_E_Stories.-1276852863.00" t="ExcludeRecursive" />
-    <e p="E:\workspace\E_Story\E_Stories" t="IncludeRecursive">
+    <e p="C:\UnityProjects\E_Story\E_Stories" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -71,7 +68,6 @@
             <e p="readMe.txt" t="Include" />
           </e>
           <e p="Generator.cs" t="Include" />
-          <e p="LoadBundle.cs" t="Include" />
           <e p="PanelsController.cs" t="Include" />
           <e p="ScrollRectExtension.cs" t="Include" />
           <e p="Utils" t="Include">
@@ -84,6 +80,7 @@
             <e p="WTAudio.cs" t="Include" />
             <e p="WTButton.cs" t="Include" />
             <e p="WTController.cs" t="Include" />
+            <e p="WTDialogeText.cs" t="Include" />
             <e p="WTVideo.cs" t="Include" />
           </e>
         </e>
@@ -121,5 +118,8 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
+    <e p="C:\Users\Администратор\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_E_Stories.572162589.00" t="ExcludeRecursive" />
   </component>
 </project>

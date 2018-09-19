@@ -14,7 +14,6 @@ public class DialogueSystem : MonoBehaviour
     
     public ContentType ContentType;
     public static DialogueSystem instance;
-    public LoadBundle LoadBundle;
     internal TextMeshProUGUI BotText;
 
     private DialogueSystem()

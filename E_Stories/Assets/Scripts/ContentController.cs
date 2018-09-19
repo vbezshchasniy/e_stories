@@ -2,50 +2,56 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ContentController : MonoBehaviour 
+public class ContentController : MonoBehaviour
 {
+	public string URL;
+	public Transform ContentPanel;
 	public DataDialogues DataDialogues;
 	public bool IsShowDialogue = true;
 	public int CurrentNode;
-	[SerializeField]
-	private TextMeshProUGUI BotText;
+	public GameObject CurrentContent;
+	
 	[SerializeField]
 	private WTController WtController;
 	[SerializeField]
 	private DialogueSystem DialogueSystem;
 
-	private void Start()
+	public static ContentController instance;
+
+	private void Awake()
 	{
-		WtController = FindObjectOfType<WTController>();
-		DialogueSystem = FindObjectOfType<DialogueSystem>();
-		BotText = DialogueSystem.GetComponentInChildren<TextMeshProUGUI>();
-		Init();
+		instance = this;
 	}
 
-	private void Init()
+	private void Start()
 	{
-		print("HII");
+		StartCoroutine(LoadBundle());
 		UpdateData();
-		int currentNode = CurrentNode;
-		int length = DataDialogues.Nodes[currentNode].PlayerAnswer.Length;
-		if (WtController != null)
-		{
-			for (int i = 0; i < length; i++)
-			{
-				if (WtController.WtButtons.Count == length)
-				{
-					int j = i;
-					WtController.WtButtons[i].onClick.AddListener(() => Respondent(j));
-					WtController.WtButtons[i].GetComponentInChildren<Text>().text = DataDialogues.Nodes[currentNode].PlayerAnswer[j].Text;
-				}
-			}
-		}
 	}
 	
-	private void Respondent(int answer)
+	public IEnumerator LoadBundle ()
+	{
+		WWW www = new WWW(URL);
+		while (!www.isDone)
+		{
+			yield return null;
+		}
+			
+		AssetBundle myasset = www.assetBundle;
+		GameObject bundle = myasset.LoadAsset<GameObject>("AssetBundle");
+		yield return new WaitForSeconds(2f);
+		CurrentContent = Instantiate(bundle, ContentPanel.transform.position, transform.rotation);
+		CurrentContent.transform.SetParent(ContentPanel.transform, false);
+		WtController = CurrentContent.GetComponent<WTController>();
+		DialogueSystem = CurrentContent.GetComponentInChildren<DialogueSystem>();
+		
+	}
+	
+	public void Respondent(int answer)
 	{
 		if (IsShowDialogue)
 		{
@@ -56,12 +62,11 @@ public class ContentController : MonoBehaviour
 
 			CurrentNode = DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
 			DialogueSystem.instance.ContentType = DataDialogues.Nodes[CurrentNode].TypeLoadingContent;
-			//LoadBundle.StartCoroutine(LoadBundle.LoadingAssetBundle());
-			UpdateData();
+			CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
+			WtController.UpdateContent();
 			AnimateText();
 		}
 	}
-	
 	
 	public void AnimateText()
 	{
@@ -74,6 +79,6 @@ public class ContentController : MonoBehaviour
 
 	private void UpdateData()
 	{
-		BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
+		//CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelsController : MonoBehaviour
 {
+    public ContentController ContentController;
     public GameObject PreviewPanel;
     public GameObject StoryPanel;
     //public GameObject TestCharacter;
@@ -16,6 +17,7 @@ public class PanelsController : MonoBehaviour
     private Image PreviewPanelBackground;
     private TextMeshProUGUI PreviewPanelDescriptionText;
     private Text PreviewPanelTitleText;
+    
 
     private void Start()
     {
@@ -39,6 +41,7 @@ public class PanelsController : MonoBehaviour
     private void OnOpenStoryClickHandler()
     {
         StoryPanel.SetActive(true);
+        ContentController.gameObject.SetActive(true);
         //TestCharacter.SetActive(true);
         //DialogueSystem.instance.IsShowDialogue = true;
     }
