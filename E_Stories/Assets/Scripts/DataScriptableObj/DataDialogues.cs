@@ -13,8 +13,6 @@ public class DialogueNode
 	public string NodeId;
 	public string NpcText;
 	public ContentType TypeLoadingContent;
-	public string AssetBundeURL;
-	public string NameAssetBundleObject;
 	public Answer[] PlayerAnswer;	
 }
 

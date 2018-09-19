@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   Nodes:
-  - NodeId: Node 0
+  - NodeId: 0
     NpcText: Load 3D Model?
     TypeLoadingContent: 4
     AssetBundeURL: 
@@ -24,7 +24,7 @@ MonoBehaviour:
     - Text: '-'
       ToNode: 1
       SpeakEnd: 0
-  - NodeId: Node 1
+  - NodeId: 1
     NpcText: Okay, this is sound! Go to video?
     TypeLoadingContent: 3
     AssetBundeURL: 
@@ -34,21 +34,21 @@ MonoBehaviour:
       ToNode: 3
       SpeakEnd: 0
     - Text: '-'
-      ToNode: 4
+      ToNode: 0
       SpeakEnd: 0
-  - NodeId: Node 2
+  - NodeId: 2
     NpcText: This is 3D model! Go to video?
     TypeLoadingContent: 0
-    AssetBundeURL: http://localhost/AssetBundles/StandaloneWindows
-    NameAssetBundleObject: FallenGuardian
+    AssetBundeURL: 
+    NameAssetBundleObject: 
     PlayerAnswer:
     - Text: +
       ToNode: 3
       SpeakEnd: 0
     - Text: '-'
-      ToNode: 4
+      ToNode: 0
       SpeakEnd: 0
-  - NodeId: Node 3
+  - NodeId: 3
     NpcText: This is video! Want image?
     TypeLoadingContent: 1
     AssetBundeURL: 
@@ -60,7 +60,7 @@ MonoBehaviour:
     - Text: '-'
       ToNode: 0
       SpeakEnd: 0
-  - NodeId: Node 4
+  - NodeId: 4
     NpcText: This image! Want more?
     TypeLoadingContent: 2
     AssetBundeURL: 
