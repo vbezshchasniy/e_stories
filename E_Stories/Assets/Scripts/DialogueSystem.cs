@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public bool IsShowDialogue = true;
-    public Button NegativeBtn;
-    public Button PositiveBtn;
-    public TextMeshProUGUI BotText;
+    
+    //public Button NegativeBtn;
+    //public Button PositiveBtn;
+    
     public DataDialogues SystemDialogue;
-    public int CurrentNode;
+    
+    public ContentType ContentType;
     public static DialogueSystem instance;
+    public LoadBundle LoadBundle;
+    internal TextMeshProUGUI BotText;
 
     private DialogueSystem()
     {
@@ -33,39 +36,15 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        NegativeBtn.onClick.AddListener(() => Respondent(1));
-        PositiveBtn.onClick.AddListener(() => Respondent(0));
-        PositiveBtn.GetComponentInChildren<Text>().text = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[0].Text;
-        NegativeBtn.GetComponentInChildren<Text>().text = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[1].Text;
+        //ContentType = SystemDialogue.Nodes[CurrentNode].TypeLoadingContent;
+        //BotText = GetComponentInChildren<TextMeshProUGUI>();
+        //NegativeBtn.onClick.AddListener(() => Respondent(1));
+        //PositiveBtn.onClick.AddListener(() => Respondent(0));
+        //PositiveBtn.GetComponentInChildren<Text>().text = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[0].Text;
+        //NegativeBtn.GetComponentInChildren<Text>().text = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[1].Text;
     }
 
-    private void Respondent(int answer)
-    {
-        if (IsShowDialogue)
-        {
-            if (SystemDialogue.Nodes[CurrentNode].PlayerAnswer[answer].SpeakEnd)
-            {
-                IsShowDialogue = false;
-            }
 
-            CurrentNode = SystemDialogue.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
-            AnimateText();
-        }
-    }
-
-    private void AnimateText()
-    {
-        Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(BotText.DOFade(0, .25f));
-        mySequence.AppendCallback(UpdateData);
-        mySequence.AppendInterval(.5f);
-        mySequence.Append(BotText.DOFade(1, .25f));
-    }
-
-    private void UpdateData()
-    {
-        BotText.text = SystemDialogue.Nodes[CurrentNode].NpcText;
-    }
 
     private void Update()
     {
@@ -100,4 +79,14 @@ public class DialogueSystem : MonoBehaviour
 //			}
         }
 //    }
+}
+
+
+public enum ContentType
+{
+    Model3D,
+    Video,
+    Image,
+    Sound,
+    Empty
 }

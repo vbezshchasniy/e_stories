@@ -1,7 +1,16 @@
 ManifestFileVersion: 0
-CRC: 1886928498
+CRC: 1326220617
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: 3dobject
+      Name: sound
+      Dependencies: {}
+    Info_1:
+      Name: video
+      Dependencies: {}
+    Info_2:
+      Name: image
+      Dependencies: {}
+    Info_3:
+      Name: model3d
       Dependencies: {}

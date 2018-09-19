@@ -16,6 +16,7 @@ MonoBehaviour:
     NpcText: Load 3D Model?
     TypeLoadingContent: 4
     AssetBundeURL: 
+    NameAssetBundleObject: 
     PlayerAnswer:
     - Text: +
       ToNode: 2
@@ -27,6 +28,7 @@ MonoBehaviour:
     NpcText: Okay, this is sound! Go to video?
     TypeLoadingContent: 3
     AssetBundeURL: 
+    NameAssetBundleObject: 
     PlayerAnswer:
     - Text: +
       ToNode: 3
@@ -37,7 +39,8 @@ MonoBehaviour:
   - NodeId: Node 2
     NpcText: This is 3D model! Go to video?
     TypeLoadingContent: 0
-    AssetBundeURL: 
+    AssetBundeURL: http://localhost/AssetBundles/StandaloneWindows
+    NameAssetBundleObject: FallenGuardian
     PlayerAnswer:
     - Text: +
       ToNode: 3
@@ -49,6 +52,7 @@ MonoBehaviour:
     NpcText: This is video! Want image?
     TypeLoadingContent: 1
     AssetBundeURL: 
+    NameAssetBundleObject: 
     PlayerAnswer:
     - Text: +
       ToNode: 4
@@ -60,6 +64,7 @@ MonoBehaviour:
     NpcText: This image! Want more?
     TypeLoadingContent: 2
     AssetBundeURL: 
+    NameAssetBundleObject: 
     PlayerAnswer:
     - Text: +
       ToNode: 0

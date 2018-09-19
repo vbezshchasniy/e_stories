@@ -5,7 +5,6 @@ using System;
 public class DataDialogues : ScriptableObject 
 {
 	public DialogueNode[] Nodes;
-
 }
 
 [Serializable]
@@ -15,8 +14,8 @@ public class DialogueNode
 	public string NpcText;
 	public ContentType TypeLoadingContent;
 	public string AssetBundeURL;
-	public Answer[] PlayerAnswer;
-	
+	public string NameAssetBundleObject;
+	public Answer[] PlayerAnswer;	
 }
 
 [Serializable]
@@ -27,11 +26,4 @@ public class Answer
 	public bool SpeakEnd;
 }
 
-public enum ContentType
-{
-	Model3D,
-	Video,
-	Image,
-	Sound,
-	Empty
-}
+

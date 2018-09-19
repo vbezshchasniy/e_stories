@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222163345425390826}
   - component: {fileID: 114323738168302684}
   - component: {fileID: 114302169859512644}
+  - component: {fileID: 114233661451994890}
   m_Layer: 5
   m_Name: PositiveButton
   m_TagString: Untagged
@@ -46,6 +47,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114233661451994890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831816136579870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa80a6a7b3f66045bd534c420306560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114302169859512644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -204.09998, y: 133}
+  m_AnchoredPosition: {x: -204.09998, y: 1109}
   m_SizeDelta: {x: 248.19995, y: 156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224400581347715626

@@ -5,21 +5,13 @@ using UnityEngine.UI;
 
 public class PanelsController : MonoBehaviour
 {
-    public bool IsServer;
     public GameObject PreviewPanel;
     public GameObject StoryPanel;
-    public GameObject TestCharacter;
+    //public GameObject TestCharacter;
     public Button ButtonClosePreviewPanel;
     public Button ButtonCloseStory;
     public Button ButtonOpenStory;
     public PreviewPanelItem PreviewPanelItems;
-    [SerializeField]
-    private string ServerURL;
-    [SerializeField]
-    private string LocalPath;
-    [SerializeField]
-    private bool NeedUseImageLoader;
-    private WWW www;
     private Image PreviewImage;
     private Image PreviewPanelBackground;
     private TextMeshProUGUI PreviewPanelDescriptionText;
@@ -27,23 +19,9 @@ public class PanelsController : MonoBehaviour
 
     private void Start()
     {
-        if (NeedUseImageLoader)
-        {
-            if (IsServer)
-            {
-                SendStringState(ServerURL, "Server URL is empty");
-                StartCoroutine(LoadImageFromServer());
-            }
-            else
-            {
-                SendStringState(LocalPath, "Local path is empty");
-                StartCoroutine(LoadImageFromLocalPath());
-            }
-        }
-
         PreviewPanel.SetActive(false);
         StoryPanel.SetActive(false);
-        TestCharacter.SetActive(false);
+        //TestCharacter.SetActive(false);
         ButtonClosePreviewPanel.onClick.AddListener(OnClosePreviewPanelClickHandler);
         ButtonOpenStory.onClick.AddListener(OnOpenStoryClickHandler);
         ButtonCloseStory.onClick.AddListener(OnCloseStoryClickHandler);
@@ -61,60 +39,16 @@ public class PanelsController : MonoBehaviour
     private void OnOpenStoryClickHandler()
     {
         StoryPanel.SetActive(true);
-        TestCharacter.SetActive(true);
-        DialogueSystem.instance.IsShowDialogue = true;
+        //TestCharacter.SetActive(true);
+        //DialogueSystem.instance.IsShowDialogue = true;
     }
 
     private void OnCloseStoryClickHandler()
     {
         StoryPanel.SetActive(false);
-        TestCharacter.SetActive(false);
-        DialogueSystem.instance.IsShowDialogue = false;
+        //TestCharacter.SetActive(false);
+        //DialogueSystem.instance.IsShowDialogue = false;
 
-    }
-    
-    private void SendStringState(string purpose, string sendText)
-    {
-        if (string.IsNullOrEmpty(purpose))
-        {
-            Debug.Log(sendText);
-        }
-    }
-
-    private IEnumerator LoadImageFromLocalPath()
-    {
-        www = new WWW(LocalPath);
-        yield return www;
-        SetSprite();
-    }
-
-    private IEnumerator LoadImageFromServer()
-    {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            Debug.Log("Network not reachable");
-            yield return null;
-        }
-        www = new WWW(ServerURL);
-        Debug.Log("Download image on progress");
-        yield return www;
-        if (string.IsNullOrEmpty(www.text))
-        {
-            Debug.Log("Download is failed");
-        }
-        else
-        {
-            Debug.Log("Download is success");
-            SetSprite();
-        }
-    }
-
-    private void SetSprite()
-    {
-        Texture2D texture2D = new Texture2D(1, 1);
-        www.LoadImageIntoTexture(texture2D);
-        Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one / 2);
-        //PreviewImage.sprite = sprite; //Load image to set sprite
     }
     
     private static GameObject GetChildGameObjectByName(GameObject fromGameObject, string withName)
@@ -143,6 +77,5 @@ public class PanelsController : MonoBehaviour
                 break;
             }
         }
-        
     }
 }
