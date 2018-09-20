@@ -26,7 +26,7 @@ public class PanelsController : MonoBehaviour
         {
             NotConnectedPanel.SetActive(true);
             TryBtn.onClick.AddListener(() => Application.LoadLevel(Application.loadedLevel));
-            ExitBtn.onClick.AddListener(() => Application.Quit());
+            ExitBtn.onClick.AddListener(Application.Quit);
             return;
         }
         SetButtons();
