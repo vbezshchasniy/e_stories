@@ -8,7 +8,9 @@ public class PanelsController : MonoBehaviour
     public ContentController ContentController;
     public GameObject PreviewPanel;
     public GameObject StoryPanel;
-    //public GameObject TestCharacter;
+    public GameObject NotConnectedPanel;
+    public Button ExitBtn;
+    public Button TryBtn;
     public Button ButtonClosePreviewPanel;
     public Button ButtonCloseStory;
     public Button ButtonOpenStory;
@@ -17,20 +19,41 @@ public class PanelsController : MonoBehaviour
     private Image PreviewPanelBackground;
     private TextMeshProUGUI PreviewPanelDescriptionText;
     private Text PreviewPanelTitleText;
-    
 
     private void Start()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            NotConnectedPanel.SetActive(true);
+            TryBtn.onClick.AddListener(() => Application.LoadLevel(Application.loadedLevel));
+            ExitBtn.onClick.AddListener(() => Application.Quit());
+            return;
+        }
+        SetButtons();
         PreviewPanel.SetActive(false);
         StoryPanel.SetActive(false);
-        //TestCharacter.SetActive(false);
-        ButtonClosePreviewPanel.onClick.AddListener(OnClosePreviewPanelClickHandler);
-        ButtonOpenStory.onClick.AddListener(OnOpenStoryClickHandler);
-        ButtonCloseStory.onClick.AddListener(OnCloseStoryClickHandler);
+        NotConnectedPanel.SetActive(false);
         PreviewImage = GetChildGameObjectByName(PreviewPanel, "PreviewImage").GetComponent<Image>();
         PreviewPanelDescriptionText = GetChildGameObjectByName(PreviewPanel, "Description").GetComponent<TextMeshProUGUI>();
         PreviewPanelTitleText = GetChildGameObjectByName(PreviewPanel, "TitleTxt").GetComponent<Text>();
         PreviewPanelBackground = PreviewPanel.GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        #if UNITY_ANDROID
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        #endif
+    }
+
+    private void SetButtons()
+    {
+        ButtonClosePreviewPanel.onClick.AddListener(OnClosePreviewPanelClickHandler);
+        ButtonOpenStory.onClick.AddListener(OnOpenStoryClickHandler);
+        ButtonCloseStory.onClick.AddListener(OnCloseStoryClickHandler);
     }
 
     private void OnClosePreviewPanelClickHandler()
@@ -42,8 +65,6 @@ public class PanelsController : MonoBehaviour
     {
         StoryPanel.SetActive(true);
         ContentController.gameObject.SetActive(true);
-        //TestCharacter.SetActive(true);
-        //DialogueSystem.instance.IsShowDialogue = true;
     }
 
     private void OnCloseStoryClickHandler()

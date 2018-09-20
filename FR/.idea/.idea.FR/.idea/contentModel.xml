@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\UnityProjects\E_Story\FR" t="IncludeRecursive">
+    <e p="C:\Users\user.N999\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\user.N999\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\user.N999\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_FR.-84042105.00" t="ExcludeRecursive" />
+    <e p="E:\workspace\E_Story\FR" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -75,6 +78,7 @@
               <e p="ReferenceFinderOnScene.cs" t="Include" />
             </e>
           </e>
+          <e p="VideoPlayerExtension.cs" t="Include" />
           <e p="WrapperTypes" t="Include">
             <e p="WT3DModel.cs" t="Include" />
             <e p="WTAudio.cs" t="Include" />
@@ -118,8 +122,5 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="C:\Users\Администратор\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Администратор\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Администратор\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_FR.-1605542877.00" t="ExcludeRecursive" />
   </component>
 </project>

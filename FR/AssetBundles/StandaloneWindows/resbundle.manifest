@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 263510376
+CRC: 46873750
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 378c785f50f6ac7add24ccd1a13742e2
+    Hash: 732228c6ffbb35ce8fbc7a0fc44dff76
   TypeTreeHash:
     serializedVersion: 2
     Hash: 95aa7d7ab28ce583a5be164be2644873
@@ -80,6 +80,7 @@ ClassTypes:
 Assets:
 - Assets/Content/SoundsContent/TestMusic.mp3
 - Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Controller/Toon Demon.controller
+- Assets/Pictures/Mainpage_welcome.png
 - Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_run01.FBX
 - Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Mesh/fallen_guardian.FBX
 - Assets/Prefabs/AssetBundle.prefab
