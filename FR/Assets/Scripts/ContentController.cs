@@ -15,6 +15,11 @@ public class ContentController : MonoBehaviour
 	public GameObject CurrentContent;
 	public GameObject LoaderPanel;
 
+	//TODO fix this
+	//Just for fun
+	public Text BytesDownloadedText;
+	//
+
 	private WTController WtController;
 
 	public static ContentController instance;
@@ -29,18 +34,20 @@ public class ContentController : MonoBehaviour
 		LoaderPanel.SetActive(true);
 		StartCoroutine(LoadBundle());
 	}
-	
-	public IEnumerator LoadBundle ()
+
+	private IEnumerator LoadBundle ()
 	{
-		WWW www = new WWW(URL);
+		var www = new WWW(URL);
 		while (!www.isDone)
 		{
 			yield return null;
+			BytesDownloadedText.text = www.bytesDownloaded.ToString();
+			Debug.Log(string.Format("Bytes Downloaded: {0}", www.bytesDownloaded));
 		}
-			
-		AssetBundle myasset = www.assetBundle;
-		GameObject bundle = myasset.LoadAsset<GameObject>("AssetBundle");
-		yield return new WaitForSeconds(3f);
+
+
+		var myAsset = www.assetBundle;
+		var bundle = myAsset.LoadAsset<GameObject>("AssetBundle");
 		CurrentContent = Instantiate(bundle, ContentPanel.transform.position, transform.rotation);
 		CurrentContent.transform.SetParent(ContentPanel.transform, false);
 		LoaderPanel.SetActive(false);
@@ -50,23 +57,23 @@ public class ContentController : MonoBehaviour
 	
 	public void Respondent(int answer)
 	{
-		if (IsShowDialogue)
-		{
-			if (DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].SpeakEnd)
-			{
-				IsShowDialogue = false;
-			}
+		if (!IsShowDialogue)
+			return;
 
-			CurrentNode = DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
-			CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
-			WtController.UpdateContent();
-			AnimateText();
+		if (DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].SpeakEnd)
+		{
+			IsShowDialogue = false;
 		}
+
+		CurrentNode = DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
+		CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
+		WtController.UpdateContent();
+		AnimateText();
 	}
 	
 	public void AnimateText()
 	{
-		Sequence mySequence = DOTween.Sequence();
+		var mySequence = DOTween.Sequence();
 		mySequence.Append(WtController.BotText.DOFade(0, .25f));
 		mySequence.AppendCallback(UpdateData);
 		mySequence.AppendInterval(.5f);
