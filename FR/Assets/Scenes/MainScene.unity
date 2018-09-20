@@ -359,7 +359,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000067599016}
-  m_SizeDelta: {x: -800, y: 0}
+  m_SizeDelta: {x: -799.99994, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &334857296
 MonoBehaviour:
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a057cea2aa837fa499cd3b68e33afe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  URL: http://localhost/AssetBundles/StandaloneWindows/resbundle
+  URL: https://fr-project-vbezshchasniy.c9users.io/www/bundles/resbundle
   ContentPanel: {fileID: 2096662247}
   DataDialogues: {fileID: 11400000, guid: 70548f1b58f8d414faf2e554f2b66c85, type: 2}
   IsShowDialogue: 1
