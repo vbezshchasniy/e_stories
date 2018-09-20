@@ -9,6 +9,7 @@ TagManager:
   - audio
   - video
   - image
+  - empty
   layers:
   - Default
   - TransparentFX

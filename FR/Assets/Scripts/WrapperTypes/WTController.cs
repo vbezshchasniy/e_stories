@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +7,17 @@ public class WTController : MonoBehaviour
 {
 	public List<GameObject> LoadingContent;
 	public List<Button> WtButtons;
-	[SerializeField]
+	public ContentType ContentType;
 	public TextMeshProUGUI BotText;
 	
 	private void Start()
 	{
+		SetButtons();
+	}
+
+	private void SetButtons()
+	{
 		DataDialogues dataDialogues = ContentController.instance.DataDialogues;
-//		BotText = FindObjectOfType<DialogueSystem>().GetComponentInChildren<TextMeshProUGUI>();
 		int currentNode = ContentController.instance.CurrentNode;
 		int length = dataDialogues.Nodes[currentNode].PlayerAnswer.Length;
 
@@ -34,17 +35,12 @@ public class WTController : MonoBehaviour
 
 	public void UpdateContent()
 	{
-		switch (ContentController.instance.DataDialogues.Nodes[ContentController.instance.CurrentNode].TypeLoadingContent)
+		int currentNode = ContentController.instance.CurrentNode;
+		ContentType = ContentController.instance.DataDialogues.Nodes[currentNode].TypeLoadingContent;
+		switch (ContentType)
 		{
 			case ContentType.Model3D:
 				SetLoadingContentState(false, "3d");
-//				foreach (var item in LoadingContent)
-//				{
-//					if (item.tag == "3d")
-//					{
-//						item.SetActive(false);
-//					}
-//				}
 				break;
 			case ContentType.Video:
 				SetLoadingContentState(false, "video");
@@ -57,8 +53,6 @@ public class WTController : MonoBehaviour
 				break;
 			case ContentType.Empty:
 				SetLoadingContentState(false, "empty");
-				break;
-			default:
 				break;
 		}
 	}
@@ -74,6 +68,5 @@ public class WTController : MonoBehaviour
 			}
 			item.SetActive(state);
 		}
-
 	}
 }

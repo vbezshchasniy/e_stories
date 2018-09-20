@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\UnityProjects\E_Story\FR" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AssetBundleBrowser" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AssetBundleBrowserMain.cs" t="Include" />
+            <e p="AssetBundleBuildTab.cs" t="Include" />
+            <e p="AssetBundleDataSource" t="Include">
+              <e p="ABDataSource.cs" t="Include" />
+              <e p="ABDataSourceProvider.cs" t="Include" />
+              <e p="AssetDatabaseABDataSource.cs" t="Include" />
+            </e>
+            <e p="AssetBundleManageTab.cs" t="Include" />
+            <e p="AssetBundleModel" t="Include">
+              <e p="ABModel.cs" t="Include" />
+              <e p="ABModelAssetInfo.cs" t="Include" />
+              <e p="ABModelBundleInfo.cs" t="Include" />
+            </e>
+            <e p="AssetBundleTree.cs" t="Include" />
+            <e p="AssetListTree.cs" t="Include" />
+            <e p="BundleDetailList.cs" t="Include" />
+            <e p="InspectTab" t="Include">
+              <e p="AssetBundleInspectTab.cs" t="Include" />
+              <e p="AssetBundleRecord.cs" t="Include" />
+              <e p="InspectSingleBundle.cs" t="Include" />
+              <e p="InspectTreeView.cs" t="Include" />
+            </e>
+            <e p="MessageList.cs" t="Include" />
+            <e p="MessageSystem.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Content" t="Include">
+          <e p="MeshSmith" t="Include">
+            <e p="ToonMonsterII" t="Include">
+              <e p="Toon Demon" t="Include">
+                <e p="readme.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BaseContent.cs" t="Include" />
+          <e p="ButtonElementsGenerator.cs" t="Include" />
+          <e p="ButtonItem.cs" t="Include" />
+          <e p="CategoryGenerator.cs" t="Include" />
+          <e p="ContentController.cs" t="Include" />
+          <e p="DataScriptableObj" t="Include">
+            <e p="CategoryType.cs" t="Include" />
+            <e p="DataCategory.cs" t="Include" />
+            <e p="DataDialogues.cs" t="Include" />
+            <e p="PreviewPanelItem.cs" t="Include" />
+          </e>
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="readme.txt" t="Include" />
+          </e>
+          <e p="Generator.cs" t="Include" />
+          <e p="Loader.cs" t="Include" />
+          <e p="PanelsController.cs" t="Include" />
+          <e p="ScrollRectExtension.cs" t="Include" />
+          <e p="Utils" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReferenceFinderOnScene.cs" t="Include" />
+            </e>
+          </e>
+          <e p="WrapperTypes" t="Include">
+            <e p="WT3DModel.cs" t="Include" />
+            <e p="WTAudio.cs" t="Include" />
+            <e p="WTButton.cs" t="Include" />
+            <e p="WTController.cs" t="Include" />
+            <e p="WTDialogeText.cs" t="Include" />
+            <e p="WTVideo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="FR.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="C:\Users\Администратор\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Администратор\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_FR.-1605542877.00" t="ExcludeRecursive" />
+  </component>
+</project>

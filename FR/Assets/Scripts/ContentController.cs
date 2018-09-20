@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Net.Mime;
+using System.Timers;
 using DG.Tweening;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +13,9 @@ public class ContentController : MonoBehaviour
 	public bool IsShowDialogue = true;
 	public int CurrentNode;
 	public GameObject CurrentContent;
-	
-	[SerializeField]
+	public GameObject LoaderPanel;
+
 	private WTController WtController;
-	[SerializeField]
-	private DialogueSystem DialogueSystem;
 
 	public static ContentController instance;
 
@@ -29,8 +26,8 @@ public class ContentController : MonoBehaviour
 
 	private void Start()
 	{
+		LoaderPanel.SetActive(true);
 		StartCoroutine(LoadBundle());
-		UpdateData();
 	}
 	
 	public IEnumerator LoadBundle ()
@@ -43,12 +40,12 @@ public class ContentController : MonoBehaviour
 			
 		AssetBundle myasset = www.assetBundle;
 		GameObject bundle = myasset.LoadAsset<GameObject>("AssetBundle");
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(3f);
 		CurrentContent = Instantiate(bundle, ContentPanel.transform.position, transform.rotation);
 		CurrentContent.transform.SetParent(ContentPanel.transform, false);
-		WtController = CurrentContent.GetComponent<WTController>();
-		DialogueSystem = CurrentContent.GetComponentInChildren<DialogueSystem>();
-		
+		LoaderPanel.SetActive(false);
+		WtController = CurrentContent.GetComponent<WTController>();		
+		UpdateData();
 	}
 	
 	public void Respondent(int answer)
@@ -61,7 +58,6 @@ public class ContentController : MonoBehaviour
 			}
 
 			CurrentNode = DataDialogues.Nodes[CurrentNode].PlayerAnswer[answer].ToNode;
-			DialogueSystem.instance.ContentType = DataDialogues.Nodes[CurrentNode].TypeLoadingContent;
 			CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
 			WtController.UpdateContent();
 			AnimateText();
@@ -71,14 +67,23 @@ public class ContentController : MonoBehaviour
 	public void AnimateText()
 	{
 		Sequence mySequence = DOTween.Sequence();
-		mySequence.Append(DialogueSystem.instance.BotText.DOFade(0, .25f));
-		//mySequence.AppendCallback(UpdateData);
+		mySequence.Append(WtController.BotText.DOFade(0, .25f));
+		mySequence.AppendCallback(UpdateData);
 		mySequence.AppendInterval(.5f);
-		mySequence.Append(DialogueSystem.instance.BotText.DOFade(1, .25f));
+		mySequence.Append(WtController.BotText.DOFade(1, .25f));
 	}
 
 	private void UpdateData()
 	{
-		//CurrentContent.GetComponent<WTController>().BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
+		WtController.BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
 	}
+}
+
+public enum ContentType
+{
+	Model3D,
+	Video,
+	Image,
+	Sound,
+	Empty
 }

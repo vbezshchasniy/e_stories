@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3756420240
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: resbundle
+      Dependencies: {}
