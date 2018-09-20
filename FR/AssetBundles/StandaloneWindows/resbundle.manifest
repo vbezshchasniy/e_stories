@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 649105247
+CRC: 443716311
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4ebeb11c57269f1abb9dbd30f091576f
+    Hash: d886e7d8eefe7929a3c19f4cc1251d6d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 9f260908ab7e1b5053242b568dafd492
+    Hash: 1bd11358f6001b0943e7abee69e8cc09
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -59,8 +59,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f718af3c7bd872e46927a3c5c947d16e, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 759e1daf134d74d46b4cac7c2ced561d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -78,25 +76,5 @@ ClassTypes:
 - Class: 329
   Script: {instanceID: 0}
 Assets:
-- Assets/Content/SoundsContent/TestMusic.mp3
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Controller/Toon Demon.controller
-- Assets/Sprites/Mainpage_welcome.png
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_run01.FBX
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Mesh/fallen_guardian.FBX
 - Assets/Prefabs/AssetBundle.prefab
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Texture/fallen_guardian _ M.png
-- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
-- Assets/Content/ImageContent/Unity_logo_2014.png
-- Assets/Sprites/BtnGray.png
-- Assets/Content/VideoContent/Video.renderTexture
-- Assets/Scripts/DataScriptableObj/Dialogue.asset
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_knockback01_03.FBX
-- Assets/Sprites/DialogueWindow.png
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Mesh/Materials/fallen_guardian
-  _ M.mat
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_detect01.FBX
-- Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
-- Assets/Content/VideoContent/videoplayback.mp4
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_idle01_04.FBX
-- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_walk01_02.FBX
 Dependencies: []
