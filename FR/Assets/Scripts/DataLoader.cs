@@ -6,15 +6,24 @@ public class DataLoader : MonoBehaviour
 {
 	public string[] Items;
 
-	private IEnumerator Start () 
+	private void Start ()
+	{
+		StartCoroutine(ConnectToServer());
+	}
+
+	private IEnumerator ConnectToServer()
 	{
 		WWW itemsData = new WWW("http://127.0.0.1:8080/fr_database/ItemsData.php");
 		yield return itemsData;
+		
 		string itemsDataString = itemsData.text;
 		Debug.Log(itemsDataString);
 
 		Items = itemsDataString.Split(';');
-		Debug.Log(GetDataValue(Items[0], "Text:"));
+		if (Items.Length > 1)
+		{
+			Debug.Log(GetDataValue(Items[0], "Text:"));
+		}
 	}
 
 	private string GetDataValue(string data, string index)
