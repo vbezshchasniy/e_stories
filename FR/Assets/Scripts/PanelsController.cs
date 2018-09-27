@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PanelsController : MonoBehaviour
 {
-    public ContentController ContentController;
+    public ContentController ContentControllerInst;
     public GameObject PreviewPanel;
     public GameObject StoryPanel;
     public GameObject NotConnectedPanel;
@@ -64,12 +64,13 @@ public class PanelsController : MonoBehaviour
     private void OnOpenStoryClickHandler()
     {
         StoryPanel.SetActive(true);
-        ContentController.gameObject.SetActive(true);
+        ContentControllerInst.gameObject.SetActive(true);
     }
 
     private void OnCloseStoryClickHandler()
     {
         StoryPanel.SetActive(false);
+        ContentControllerInst.TriggerVideoPlay(true);
         //TestCharacter.SetActive(false);
         //DialogueSystem.instance.IsShowDialogue = false;
 
