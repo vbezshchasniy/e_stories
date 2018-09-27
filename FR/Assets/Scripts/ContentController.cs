@@ -12,7 +12,7 @@ public class ContentController : MonoBehaviour
     public int CurrentNode;
     public GameObject CurrentContent;
     public GameObject LoaderPanel;
-    public GameObject AssetBundle;
+    //public GameObject AssetBundle;
     public GameObject PreviewPanel;
     public GameObject TopPanel;
     public GameObject ScrollView;
@@ -35,16 +35,8 @@ public class ContentController : MonoBehaviour
     private void Start()
     {
         LoaderPanel.SetActive(true);
-
-        /////
-        AssetBundle.SetActive(true);
-        LoaderPanel.SetActive(false);
-        WtController = AssetBundle.GetComponent<WTController>();
-        UpdateData();
-////
-
-
-//		StartCoroutine(LoadBundle());
+        //WtController = AssetBundle.GetComponent<WTController>();
+		StartCoroutine(LoadBundle());
     }
 
     private IEnumerator LoadBundle()
@@ -52,11 +44,10 @@ public class ContentController : MonoBehaviour
         var www = new WWW(URL);
         while (!www.isDone)
         {
-            yield return null;
+            yield return new WaitForSeconds(3f);
             BytesDownloadedText.text = www.bytesDownloaded.ToString();
             Debug.Log(string.Format("Bytes Downloaded: {0}", www.bytesDownloaded));
         }
-
 
         var myAsset = www.assetBundle;
         var bundle = myAsset.LoadAsset<GameObject>("AssetBundle");
@@ -95,21 +86,14 @@ public class ContentController : MonoBehaviour
     private void UpdateData()
     {
         WtController.BotText.text = DataDialogues.Nodes[CurrentNode].NpcText;
-
-
-        ////
-        TriggerVideoPlay(false);
-        ///
     }
-
 
     public void TriggerVideoPlay(bool state)
     {
         ScrollView.SetActive(state);
         PreviewPanel.SetActive(state);
         TopPanel.SetActive(state);
-        StoryPanelBack.color = new Color(StoryPanelBack.color.r, StoryPanelBack.color.g, StoryPanelBack.color.b,
-            state ? 1 : 0);
+        StoryPanelBack.color = new Color(StoryPanelBack.color.r, StoryPanelBack.color.g, StoryPanelBack.color.b, state ? 1 : 0);
     }
 }
 

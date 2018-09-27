@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2991398063
+CRC: 1570101822
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 051d92061a5a45b9b9c6ce9fc3d5130c
+    Hash: 52f216ba15c39d35130cc696a9a2f411
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d8dd37cf507ab9b6a73d418118811cad
+    Hash: bcdb38dd5862ead877bc84ba7087b08d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,7 +15,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -42,8 +46,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
-  Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
   Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
@@ -52,7 +54,7 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: f718af3c7bd872e46927a3c5c947d16e, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: ccd7a92d3b4db5440b1be4deb1b07db9, type: 3}
+  Script: {fileID: 11500000, guid: 0b8f1dd0dd4c23e48b6b429a3aecca6e, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -65,8 +67,31 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
+- Class: 328
+  Script: {instanceID: 0}
 - Class: 329
   Script: {instanceID: 0}
 Assets:
+- Assets/Content/SoundsContent/TestMusic.mp3
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Controller/Toon Demon.controller
+- Assets/Sprites/Mainpage_welcome.png
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_run01.FBX
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Mesh/fallen_guardian.FBX
+- Assets/Content/VideoContent/HarryPotter.mp4
 - Assets/Prefabs/AssetBundle.prefab
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Texture/fallen_guardian _ M.png
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+- Assets/Content/ImageContent/Unity_logo_2014.png
+- Assets/Sprites/BtnGray.png
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_knockback01_03.FBX
+- Assets/Content/TV/TV_D.dds
+- Assets/Sprites/DialogueWindow.png
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Mesh/Materials/fallen_guardian
+  _ M.mat
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_detect01.FBX
+- Assets/Content/TV/TV.obj
+- Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
+- Assets/Content/VideoContent/videoplayback.mp4
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_idle01_04.FBX
+- Assets/Content/MeshSmith/ToonMonsterII/Toon Demon/Motion/fallen_guardian_walk01_02.FBX
 Dependencies: []

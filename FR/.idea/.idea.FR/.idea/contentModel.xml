@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\user\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\user\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_FR.-1015279293.00" t="ExcludeRecursive" />
-    <e p="E:\Projects\work\E_Stories\FR" t="IncludeRecursive">
+    <e p="C:\Users\user.N999\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\user.N999\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\user.N999\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_FR.-84042105.00" t="ExcludeRecursive" />
+    <e p="E:\workspace\E_story\FR" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -80,7 +80,6 @@
             </e>
           </e>
           <e p="WTController.cs" t="Include" />
-          <e p="WTVideoPlayer.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
@@ -107,6 +106,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="VideoHelper.cs" t="Include" />
       </e>
       <e p="FR.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

@@ -13,7 +13,7 @@ public class DialogueNode
 	public string NodeId;
 	public string NpcText;
 	public ContentType TypeLoadingContent;
-	public Answer[] PlayerAnswer;	
+	public Answer[] PlayerAnswer;
 }
 
 [Serializable]
