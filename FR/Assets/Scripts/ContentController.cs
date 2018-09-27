@@ -1,7 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class ContentController : MonoBehaviour
 {
@@ -12,11 +15,11 @@ public class ContentController : MonoBehaviour
     public int CurrentNode;
     public GameObject CurrentContent;
     public GameObject LoaderPanel;
-    //public GameObject AssetBundle;
     public GameObject PreviewPanel;
     public GameObject TopPanel;
     public GameObject ScrollView;
     public Image StoryPanelBack;
+    public List<VideoClip> Clips;
 
     //TODO fix this
     //Just for fun
@@ -51,6 +54,10 @@ public class ContentController : MonoBehaviour
 
         var myAsset = www.assetBundle;
         var bundle = myAsset.LoadAsset<GameObject>("AssetBundle");
+        
+        //TRY TEST WITH LIST
+        //Clips = myAsset.LoadAllAssets<VideoClip>().ToList();
+        
         CurrentContent = Instantiate(bundle, ContentPanel.transform.position, transform.rotation);
         CurrentContent.transform.SetParent(ContentPanel.transform, false);
         LoaderPanel.SetActive(false);
